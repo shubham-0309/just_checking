@@ -218,6 +218,6 @@ function isLoggedIn(req,res,next){
 	}
 }
 
-app.listen(3000,function(){
+app.listen(process.env.PORT,function(){
 	console.log("Server Started!!");
 });
