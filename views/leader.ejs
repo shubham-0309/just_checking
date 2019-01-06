@@ -1,0 +1,14 @@
+<% include partials/header %>
+
+<div class="container">
+	<% leader.forEach(function(leader){ %> 
+	<div class="well">
+		<img src="<%= leader.image %>" class="img-circle" style="width: 40px;height: 40px;"> <h2><%= leader.name %>  ------------            <%= leader.likes %> likes</h2>
+	</div>
+<% }) %>
+</div>
+
+
+
+
+<% include partials/footer %>

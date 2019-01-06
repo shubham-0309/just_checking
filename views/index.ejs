@@ -1,0 +1,36 @@
+<% include partials/header %>
+
+<div class="container">
+	<div class="jumbotron">
+		<div class="container">
+			<h1>Welcome to YelpCamp</h1>
+			<p><a class="btn btn-primary btn-lg" href="/campground/add">Add new campground</a></p>
+		</div>
+	</div> 
+
+	<div class="row" style="display:flex;flex-wrap:wrap;">
+		<% camp.forEach(function(camp){ %>
+		<div class="col-md-3 col-sm-6">
+			<div class="thumbnail">
+				<img src="<%= camp.image %>">
+					<div class="caption">
+						
+						<h3><%= camp.name %><p style="display: inline; float: right;"> <%= camp.likes %></p>
+							</h3>
+							
+						<p>
+							<a href="/campground/<%= camp._id %>" class="btn btn-primary"style="display: inline; float: left;">More Info</a>
+
+							<form action="/campground/<%= camp._id %>" method="POST" > <input type="submit" name="Like" value="Like" style="display: inline; float: right;"> 
+      							</form>
+						</p>
+					
+					</div>
+			</div>
+		</div>
+	
+<% }) %>
+	</div>
+</div>
+
+<% include partials/footer %>
